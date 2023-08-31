@@ -1,9 +1,15 @@
+// Corto 1, Computacion Paralela y Distribuida
+// Carol Arevalo, 20461
+// 30/08/2023
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
 
-#define THRESHOLD 10
+#define THRESHOLD 10 // Valor de n para el cual se ejecuta la versión secuencial
 
+// Función recursiva para calcular el término de Fibonacci
 long long fib_recursive(int n) {
     if (n <= 0) {
         return 0;
@@ -14,6 +20,7 @@ long long fib_recursive(int n) {
     }
 }
 
+// Función recursiva para calcular el término de Fibonacci con OpenMP
 long long fib_recursive_omp(int n) {
     if (n <= 0) {
         return 0;
@@ -34,6 +41,7 @@ long long fib_recursive_omp(int n) {
     }
 }
 
+// Función principal
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         printf("Uso: %s <n>\n", argv[0]);

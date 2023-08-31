@@ -1,13 +1,21 @@
+// Corto 1, Computacion Paralela y Distribuida
+// Carol Arevalo, 20461
+// 30/08/2023
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-// Función recursiva para calcular el n-ésimo término de Fibonacci
-unsigned long long fib_recursive(int n) {
-    if (n <= 1) {
-        return n;
+// Función recursiva para calcular el término de Fibonacci
+long long fib_recursive(int n) {
+    if (n <= 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        return fib_recursive(n - 1) + fib_recursive(n - 2);
     }
-    return fib_recursive(n - 1) + fib_recursive(n - 2);
 }
 
 int main(int argc, char* argv[]) {
